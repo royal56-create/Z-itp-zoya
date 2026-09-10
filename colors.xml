@@ -1,0 +1,11 @@
+<resources>
+    <color name="zoya_bg">#070709</color>
+    <color name="zoya_card">#12131A</color>
+    <color name="zoya_text">#F6F7FB</color>
+    <color name="zoya_muted">#A7AAB8</color>
+    <color name="zoya_cyan">#5DE7FF</color>
+    <color name="zoya_pink">#FF5CA8</color>
+    <color name="zoya_violet">#9A7BFF</color>
+    <color name="zoya_green">#65E6A6</color>
+    <color name="zoya_amber">#FFC65A</color>
+</resources>

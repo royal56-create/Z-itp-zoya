@@ -1,0 +1,11 @@
+{
+  "name": "Zoya AI Voice Assistant",
+  "description": "A personal, loyal, and supportive AI voice assistant created by Royal Ankit Ahiran.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

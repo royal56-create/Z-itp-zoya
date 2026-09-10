@@ -1,0 +1,3 @@
+package com.royalankit.zoya.service
+import android.service.voice.VoiceInteractionService
+class ZoyaVoiceInteractionService:VoiceInteractionService()

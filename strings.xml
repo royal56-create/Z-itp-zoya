@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Zoya AI Voice Assistant</string>
+    <string name="developer_name">Royal Ankit Ahiran</string>
+    <string name="service_channel">Zoya background assistant</string>
+    <string name="alert_channel">Zoya alerts</string>
+    <string name="accessibility_description">Zoya uses accessibility only for user-requested UI automation such as typing, clicking and scrolling.</string>
+</resources>

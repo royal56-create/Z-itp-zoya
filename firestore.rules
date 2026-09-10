@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      match /history/{historyId} {
+        allow read, delete: if isOwner(userId);
+        allow create: if isOwner(userId)
+          && request.resource.data.keys().hasOnly(['kind', 'ts', 'user', 'assistant'])
+          && request.resource.data.keys().hasAll(['kind', 'ts', 'user', 'assistant'])
+          && request.resource.data.kind in ['chat', 'voice']
+          && request.resource.data.ts is int
+          && request.resource.data.user is string
+          && request.resource.data.assistant is string
+          && request.resource.data.user.size() <= 8000
+          && request.resource.data.assistant.size() <= 8000;
+        allow update: if false;
+      }
+    }
+
+    match /accounts/{accountId} {
+      allow read, write: if isOwner(accountId);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
